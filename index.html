@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Interactive rating component</title>
+</head>
+
+<body>
+  <main>
+
+    <!-- Rating state start -->
+    <div id="whole-card">
+      <div class="card front">
+        <div id="star">
+          <img src="./images/icon-star.svg">
+        </div>
+
+        <div class="info-front">
+          <h1 class="intro">How did we do?</h1>
+
+          <p class="description">
+            Please let us know how we did with your support request. All feedback is appreciated
+            to help us improve our offering!
+          </p>
+
+          <form id="rating" name="rating" method="post">
+            <div class="numbers">
+              <input id="one" type="button" onclick="return validateForm('#one')"  value="1">
+              <input id="two" type="button" onclick="return validateForm('#two')" value="2">
+              <input id="three" type="button" onclick="return validateForm('#three')" value="3">
+              <input id="four" type="button" onclick="return validateForm('#four')" value="4">
+              <input id="five" type="button" onclick="return validateForm('#five')" value="5">
+            </div>
+
+            <input type="submit" id="submit" onclick="return validateForm('#submit')" value="Submit">
+          </form>
+        </div>
+      </div>
+      <!-- Rating state end -->
+
+      <!-- Thank you state start -->
+      <div class="card back">
+        <div id="thanks">
+          <img src="./images/illustration-thank-you.svg">
+        </div>
+        <span id="rating-result"></span>
+
+        <div class="info-back">
+          <h2 class="intro">Thank you!</h2>
+
+          <p class="description">
+            We appreciate you taking the time to give a rating. If you ever need more support,
+            don't hesitate to get in touch!
+          </p>
+        </div>
+
+      </div>
+    </div>
+    <!-- Thank you state end -->
+  </main>
+  <script src="./scripts/main.js" async></script>
+</body>
+
+</html>
