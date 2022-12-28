@@ -1,38 +1,28 @@
-document.querySelector('#submit').disabled=true;
-document.querySelector('#submit').preventDefault;
-let front = document.getElementsByClassName('front')[0];
-let back = document.getElementsByClassName('back')[0];
-let spanoutput = document.getElementById('rating-result');
-let selectedValue;
-
-function validateForm(select) {
-    
-    if (select === '#submit'){
-        // document.querySelector('.card').style.transform("rotateY(180deg)");
-        try{
-            // console.log(selectedValue)
-            // console.log(front);
-            // console.log(back);
-            
-            spanoutput.innerHTML =`You selected ${document.querySelector(selectedValue).value} out of 5 `;
-            front.style.transform= 'rotateY(180deg)';
-            back.style.transform= 'rotateY(0deg)';
-        }
-        catch(ex){
-            console.log(ex);
-        }
-        // document.getElementsByClassName('back').style.transform("rotateY(180deg)")
-
+function validateForm(event) {
+    let selected;
+    const data = new FormData(form);
+    for (const entry of data) {
+        selected = entry[1];
+    }
+    if (selected !== undefined) {
+        spanoutput.innerHTML = `You selected ${selected} out of 5 `;
+        front.className = 'flipfront';
+        back.className = 'semi-hidden';
+        delay(300).then(() => back.className = 'flipback')
+        console.log(selected);
     }
     else{
-        document.querySelector(`${select}`).addEventListener('click', selected(`${select}`));
-        document.querySelector('#submit').disabled=false;
+        console.log('attempted to submit without choosing score');
     }
+    event.preventDefault();
+}
 
-    // console.log(selectedValue)
-    return false
-};
+function delay(time){
+    return new Promise (resolve => setTimeout(resolve, time))
+}
 
-function selected(number){
-    selectedValue=number;
- }
+let front = document.getElementById('front-card')
+let back = document.getElementById('back-card')
+let spanoutput = document.getElementById('rating-result');
+const form = document.getElementById('rating');
+form.addEventListener("submit", validateForm)

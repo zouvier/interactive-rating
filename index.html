@@ -19,7 +19,7 @@
 
     <!-- Rating state start -->
     <div id="whole-card">
-      <div class="card front">
+      <div class="front" id="front-card">
         <div id="star">
           <img src="./images/icon-star.svg" alt="" aria-hidden="true">
         </div>
@@ -32,27 +32,38 @@
             to help us improve our offering!
           </p>
 
-          <form id="rating" name="rating" method="post">
+          <form id="rating" name="rating">
             <div class="numbers">
-              <input id="one" type="button" onclick="return validateForm('#one')"  value="1">
-              <input id="two" type="button" onclick="return validateForm('#two')" value="2">
-              <input id="three" type="button" onclick="return validateForm('#three')" value="3">
-              <input id="four" type="button" onclick="return validateForm('#four')" value="4">
-              <input id="five" type="button" onclick="return validateForm('#five')" value="5">
+
+              <input id="one" type="radio" name="rated-value" class="radionums" value="1">
+              <label class="labels" for="one">1</label>
+
+              <input id="two" type="radio" name="rated-value" class="radionums" value="2">
+              <label class="labels" for="two">2</label>
+
+              <input id="three" type="radio" name="rated-value" class="radionums" value="3">
+              <label class="labels" for="three">3</label>
+
+              <input id="four" type="radio" name="rated-value" class="radionums" value="4">
+              <label class="labels" for="four">4</label>
+
+              <input id="five" type="radio" name="rated-value" class="radionums" value="5">
+              <label class="labels" for="five">5</label>
+
             </div>
 
-            <input type="submit" id="submit" onclick="return validateForm('#submit')" value="Submit">
+            <button type="submit" id="submit"> Submit</button>
           </form>
         </div>
       </div>
       <!-- Rating state end -->
 
       <!-- Thank you state start -->
-      <div class="card back">
+      <div class="make-hidden" id="back-card">
         <div id="thanks">
           <img src="./images/illustration-thank-you.svg" alt="" aria-hidden="true">
         </div>
-        <span id="rating-result"></span>
+        <p><span id="rating-result"></span></p>
 
         <div class="info-back">
           <h2 class="intro">Thank you!</h2>
