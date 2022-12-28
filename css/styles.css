@@ -84,6 +84,10 @@ h6 {
 .make-hidden{
     display: none;
 }
+
+.make-invisible{
+    visibility: hidden;
+}
 .semi-hidden {
     display: block;
     width: 0;
@@ -130,7 +134,10 @@ h6 {
 }
 
 .radionums{
-    display: none;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+
 }
 
 .labels{
@@ -147,7 +154,7 @@ input:checked + label{
     color: white;
 }
 
-.labels:hover, .labels:focus-visible, .labels:checked  {
+.labels:hover, .labels:focus-visible, .labels:checked {
     transition: all 1s;
     background-color: hsl(25, 97%, 53%);
     color: white;

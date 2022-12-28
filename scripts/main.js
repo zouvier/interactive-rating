@@ -9,6 +9,7 @@ function validateForm(event) {
         front.className = 'flipfront';
         back.className = 'semi-hidden';
         delay(300).then(() => back.className = 'flipback')
+        delay(1000).then(() => front.className = 'make-invisible')
         console.log(selected);
     }
     else{

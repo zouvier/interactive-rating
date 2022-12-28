@@ -18,7 +18,7 @@
   <main>
 
     <!-- Rating state start -->
-    <div id="whole-card">
+    <div id="whole-card" >
       <div class="front" id="front-card">
         <div id="star">
           <img src="./images/icon-star.svg" alt="" aria-hidden="true">
@@ -32,9 +32,9 @@
             to help us improve our offering!
           </p>
 
-          <form id="rating" name="rating">
+          <form id="rating" name="rating" role="radiogroup">
             <div class="numbers">
-
+              
               <input id="one" type="radio" name="rated-value" class="radionums" value="1">
               <label class="labels" for="one">1</label>
 
@@ -59,7 +59,7 @@
       <!-- Rating state end -->
 
       <!-- Thank you state start -->
-      <div class="make-hidden" id="back-card">
+      <div class="make-hidden" id="back-card" aria-live="polite">
         <div id="thanks">
           <img src="./images/illustration-thank-you.svg" alt="" aria-hidden="true">
         </div>
